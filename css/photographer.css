@@ -6,6 +6,7 @@
     background-color: #FAFAFA;
     height: 300px;
     margin: 0 100px;
+    overflow: hidden;
 }
 
 .contact_button {
@@ -31,6 +32,10 @@
     justify-content: space-between;
     padding: 35px;
     margin: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .modal header {

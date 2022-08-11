@@ -11,14 +11,10 @@
 
 <body>
   <header>
-    <img src="assets/images/logo.png" class="logo" />
+    <a href="index.html"><img src="assets/images/logo.png" class="logo" /></a>
   </header>
   <main id="main">
-    <div class="photographer_section"></div>
-    <div class="photograph-header">
-      <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
-      <p id="test"></p>
-    </div>
+    <div class="productions-section"></div>
   </main>
   <div id="contact_modal">
     <div class="modal">
@@ -36,10 +32,19 @@
     </div>
   </div>
 
+  <!-- À TRIER -->
+
   <script src="scripts/api/Api.js"></script>
-  <script src="scripts/factories/photographer.js"></script>
+  <script src="scripts/factories/photographer-header.js"></script>
+  <script src="scripts/factories/media.js"></script>
+  <script src="scripts/factories/price.js"></script>
   <script src="/scripts/pages/photographer.js"></script>
   <script src="/scripts/utils/contactForm.js"></script>
+
+  <script src="/scripts/utils/likeProduction.js"></script>
+  <script src="/scripts/utils/refreshProductionsGrid.js"></script>
+
+  <script src="/scripts/models/sort-form.js"></script>
 
 </body>
 

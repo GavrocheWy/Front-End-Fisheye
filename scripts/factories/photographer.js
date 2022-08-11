@@ -1,4 +1,4 @@
-function photographerFactory(data, context) {
+function photographerFactory(data) {
 
     const { name, id, city, country, tagline, price, portrait } = data;
     
@@ -10,17 +10,17 @@ function photographerFactory(data, context) {
 
         const article = document.createElement('article');
         const link = document.createElement('a');
+        const imgFrame = document.createElement('div')
         const img = document.createElement('img');
         const h2 = document.createElement('h2');
         const paragraph = document.createElement('p')
-
-        const countrySpan = document.createElement('span')
+        const localisationSpan = document.createElement('span')
         const taglineSpan = document.createElement('span')
         const priceSpan = document.createElement('span')
 
         img.setAttribute("src", picture)
         h2.textContent = name;
-        countrySpan.textContent = `${city}, ${country}`
+        localisationSpan.textContent = `${city}, ${country}`
         taglineSpan.textContent = tagline
         priceSpan.textContent = `${price}€/jour`
 
@@ -34,13 +34,20 @@ function photographerFactory(data, context) {
 
         article.appendChild(link);
 
-        link.appendChild(img);
+        // Construction de l'élément
+
+        link.appendChild(imgFrame);
         link.appendChild(h2);
+        imgFrame.appendChild(img);
         article.appendChild(paragraph);
 
-        paragraph.appendChild(countrySpan);
+        paragraph.appendChild(localisationSpan);
         paragraph.appendChild(taglineSpan);
         paragraph.appendChild(priceSpan);
+
+        // Ajout des classes CSS
+
+        // Return
 
         return (article);
     }

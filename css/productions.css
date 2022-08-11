@@ -1,0 +1,45 @@
+.productions-section {
+    display: flex;
+    gap: 2.5%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 100px;
+}
+
+.productions-section__article {
+    width: 5%;
+}
+
+.productions-section__article--img-frame {
+    width: 100%;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+}
+
+.productions-section__article--img-frame img, .productions-section__article--img-frame video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.photograph-card {
+    position: fixed;
+    bottom: 0px;
+    right: 50px;
+    background-color: #901C1C;
+    padding: 0px 20px;
+    color: white;
+    display: flex;
+    gap: 20px;
+}
+
+.sort-form {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    margin: 30px 0px;
+}
+
+.sort-form label {
+    font-size: 16px;
+}
