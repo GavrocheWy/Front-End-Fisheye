@@ -1,103 +1,50 @@
 function photographerFactory(data, context) {
 
     const { name, id, city, country, tagline, price, portrait } = data;
+    
+    let picture = `assets/photographers/${portrait}`;
 
-    const picture = `assets/photographers/${portrait}`;
+    function getUserCardDOM() {
 
-    if (context === 'homepage') {
+        // Création des éléments HTML de la page
 
-        function getUserCardDOM() {
+        const article = document.createElement('article');
+        const link = document.createElement('a');
+        const img = document.createElement('img');
+        const h2 = document.createElement('h2');
+        const paragraph = document.createElement('p')
 
-            // Création des éléments HTML de la page
+        const countrySpan = document.createElement('span')
+        const taglineSpan = document.createElement('span')
+        const priceSpan = document.createElement('span')
 
-            const article = document.createElement('article');
-            const link = document.createElement('a');
-            const img = document.createElement('img');
-            const h2 = document.createElement('h2');
-            const paragraph = document.createElement('p')
+        img.setAttribute("src", picture)
+        h2.textContent = name;
+        countrySpan.textContent = `${city}, ${country}`
+        taglineSpan.textContent = tagline
+        priceSpan.textContent = `${price}€/jour`
 
-            const countrySpan = document.createElement('span')
-            const taglineSpan = document.createElement('span')
-            const priceSpan = document.createElement('span')
+        // Création de l'url avec l'id du photographe associé
 
-            img.setAttribute("src", picture)
-            h2.textContent = name;
-            countrySpan.textContent = `${city}, ${country}`
-            taglineSpan.textContent = tagline
-            priceSpan.textContent = `${price}€/jour`
+        let urlSearchParams = `?id=${id}`
+        let urlBase = 'photographer.html'
+        let url = urlBase + urlSearchParams
 
-            // Création de l'url avec l'id du photographe associé
+        link.setAttribute('href', url)
 
-            let urlSearchParams = `?id=${id}`
-            let urlBase = 'photographer.html'
-            let url = urlBase + urlSearchParams
+        article.appendChild(link);
 
-            link.setAttribute('href', url)
+        link.appendChild(img);
+        link.appendChild(h2);
+        article.appendChild(paragraph);
 
-            article.appendChild(link);
+        paragraph.appendChild(countrySpan);
+        paragraph.appendChild(taglineSpan);
+        paragraph.appendChild(priceSpan);
 
-            link.appendChild(img);
-            link.appendChild(h2);
-            article.appendChild(paragraph);
-
-            paragraph.appendChild(countrySpan);
-            paragraph.appendChild(taglineSpan);
-            paragraph.appendChild(priceSpan);
-
-            return (article);
-        }
-
-        return { name, id, city, country, tagline, price, picture, getUserCardDOM }
-
-    } else if (context === 'singlepage') {
-
-        function getUserCardDOM() {
-
-            // Création des éléments HTML de la page
-
-            const article = document.createElement('article');
-            const link = document.createElement('a');
-            const img = document.createElement('img');
-            const h2 = document.createElement('h2');
-            const paragraph = document.createElement('p')
-
-            const countrySpan = document.createElement('span')
-            const taglineSpan = document.createElement('span')
-            const priceSpan = document.createElement('span')
-
-            img.setAttribute("src", picture)
-            h2.textContent = name;
-            countrySpan.textContent = `${city}, ${country}`
-            taglineSpan.textContent = tagline
-            priceSpan.textContent = `${price}€/day`
-
-            // Création de l'url avec l'id du photographe associé
-
-            let urlSearchParams = `?id=${id}`
-            let urlBase = 'photographer.html'
-            let url = urlBase + urlSearchParams
-
-            link.setAttribute('href', url)
-
-            article.appendChild(link);
-
-            link.appendChild(img);
-            link.appendChild(h2);
-            article.appendChild(paragraph);
-
-            paragraph.appendChild(countrySpan);
-            paragraph.appendChild(taglineSpan);
-            paragraph.appendChild(priceSpan);
-
-            return (article);
-        }
-
-        return { name, id, city, country, tagline, price, picture, getUserCardDOM }
-
-    } else {
-
-        throw 'Unknown type format'
-        
+        return (article);
     }
+
+    return { name, id, city, country, tagline, price, picture, getUserCardDOM }
 
 }

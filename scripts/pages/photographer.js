@@ -9,12 +9,11 @@ async function getPhotographerInfos() {
         return getPhotographersApi
     }
 
-    const photographerInfos = await photographersInfosApi()
-    console.log('photographer infos :', photographerInfos)
+    const photographer = await photographersInfosApi()
 
-    let photographer = []
+    console.log('photographer infos :', photographer)
 
-    return photographer = photographerInfos
+    return photographer
 
 }
 
@@ -27,29 +26,18 @@ async function getPhotographerProductions() {
         return getPhotographersProductionsApi
     }
 
-    const photographerProductions = await photographersProductionsApi()
-    console.log('photographer productions :', photographerProductions)
+    const allPhotographerProductions = await photographersProductionsApi()
+    
+    console.log('photographer productions :', allPhotographerProductions)
 
-    let allPhotographerProductions = []
-
-    return allPhotographerProductions = photographerProductions
+    return allPhotographerProductions
 
 }
 
-async function displayData(photographer) {
-
-    const photographersSection = document.querySelector(".photographer_section");
-
-    const photographerModel = photographerFactory(photographer, 'singlepage');
-    const userCardDOM = photographerModel.getUserCardDOM();
-    photographersSection.appendChild(userCardDOM);
-
-};
+// Initialisation de la page
 
 async function init() {
     const photographersInfos = await getPhotographerInfos();
-    displayData(photographersInfos);
-
     const photographerProductions = await getPhotographerProductions();
 };
 
