@@ -24,13 +24,14 @@ function sortForm() {
     sortForm.appendChild(sortLabel)
     sortForm.appendChild(sortSelect)
     
-    buildOption('popularite', 'Popularité')
     buildOption('date', 'Date')
+    buildOption('popularite', 'Popularité')
     buildOption('titre', 'Titre')
 
     sortForm.classList.add('sort-form')
     sortSelect.classList.add('sort-select')
+    sortSelect.setAttribute('aria-label', 'Choisissez une option de tri pour l\'affichage des productions du photographe')
 
-    productionsSection.prepend(sortForm)
+    productionsSection.parentNode.insertBefore(sortForm, productionsSection)
 
 }

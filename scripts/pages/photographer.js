@@ -1,5 +1,9 @@
 // PARTIE RECUPERATION DES INFORMATIONS - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+// Variables globales 
+
+let photographerProductions = []
+
 // Récupération des informations du photographe
 
 async function getPhotographerInfos() {
@@ -26,11 +30,15 @@ async function getPhotographerProductions() {
         return getPhotographersProductionsApi
     }
 
-    const allPhotographerProductions = await photographersProductionsApi()
+    const getAllPhotographerProductions = await photographersProductionsApi()
 
     // console.log('photographer productions :', allPhotographerProductions)
 
-    return allPhotographerProductions
+    getAllPhotographerProductions.forEach(production => {
+        production.isLiked = false;
+    });
+
+    return getAllPhotographerProductions
 
 }
 
@@ -100,15 +108,20 @@ async function displayProductions(photographerProductions) {
 // Initialisation de la page
 
 async function init() {
+
     const photographersInfos = await getPhotographerInfos();
     displayData(photographersInfos);
-    const photographerProductions = await getPhotographerProductions();
+    photographerProductions = await getPhotographerProductions();
     displayProductions(photographerProductions);
+
+    // MODELS
+    
+    sortForm()
 
     // ACTIONS 
 
-    likesProductions()
-    refreshProductionsGrid(photographerProductions)
+    refreshProductionsGrid()
+    
 };
 
 init();

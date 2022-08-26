@@ -26,6 +26,7 @@ function photographerHeader(data) {
 
         h1.textContent = name;
         contactBtn.textContent = 'Contactez-moi';
+        contactBtn.setAttribute('id', 'contact_modal_open_btn')
         localisationSpan.textContent = `${city}, ${country}`
         taglineSpan.textContent = tagline
 
@@ -44,6 +45,13 @@ function photographerHeader(data) {
         // Ajout des classes CSS
 
         header.classList.add('photograph-header')
+        imgFrame.classList.add('photograph-header__img-frame')
+        h1.classList.add('photograph-header__title')
+
+        paragraph.classList.add('photograph-header__infos')
+        localisationSpan.classList.add('photograph-header__infos--localisation')
+        taglineSpan.classList.add('photograph-header__infos--slogan')
+        contactBtn.classList.add('contact_button')
 
         return (header);
     }

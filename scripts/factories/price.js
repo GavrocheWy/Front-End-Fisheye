@@ -6,7 +6,9 @@ function priceFactory(data) {
 
         const priceCard = document.createElement('div')
         const priceText = document.createElement('p');
+        const totalLikesBox = document.createElement('div');
         const totalLikesText = document.createElement('p');
+        const totalLikesIcon = document.createElement('i');
 
         // Attributs & Contenu textuel
 
@@ -17,12 +19,18 @@ function priceFactory(data) {
 
         // Construction de l'élément
 
-        priceCard.appendChild(totalLikesText)
+        priceCard.appendChild(totalLikesBox)
         priceCard.appendChild(priceText)
+
+        totalLikesBox.appendChild(totalLikesText)
+        totalLikesBox.appendChild(totalLikesIcon)
 
         // Ajout des classes CSS
 
         priceCard.classList.add('photograph-card')
+        totalLikesBox.classList.add('photograph-card__total-like')
+        totalLikesIcon.classList.add('fas')
+        totalLikesIcon.classList.add('fa-heart')
 
         return (priceCard);
 

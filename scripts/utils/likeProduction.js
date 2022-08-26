@@ -1,38 +1,63 @@
-function likesProductions() {
+function likesProductions(btn) {
 
-    const allLikeButtons = document.querySelectorAll('.productions-section__article--btn')
 
+    btn.addEventListener('click', function (e) {
+
+        e.preventDefault()
+
+        likeThePost(btn)
+
+    })
+
+}
+
+function likeThePost(btn) {
     const totalLikesSelector = document.querySelector('#total-likes')
     let totalLikes = Number(totalLikesSelector.innerText)
+    let associatedLikesSelector = btn.previousSibling
+    let associatedLikes = Number(associatedLikesSelector.innerText)
 
-    allLikeButtons.forEach(btn => {
+    const associatedProduction = getProductionId()
 
-        const associatedLikesSelector= btn.previousSibling
-        let associatedLikes = Number(associatedLikesSelector.innerText)
+    if (associatedProduction.isLiked === false) {
 
-        btn.addEventListener('click', function (e) {
+        btn.classList.add('liked')
+        associatedLikesSelector.classList.add('liked')
+        associatedProduction.isLiked = true
+        associatedProduction.likes++
+        associatedLikes++
+        totalLikes++
 
-            e.preventDefault()
+        console.log(associatedProduction)
 
-            if (!btn.classList.contains('liked')) {
+    } else if (associatedProduction.isLiked === true) {
 
-                btn.classList.add('liked')
-                associatedLikes++
-                totalLikes++
+        btn.classList.remove('liked')
+        associatedLikesSelector.classList.remove('liked')
+        associatedProduction.isLiked = false
+        associatedProduction.likes--
+        associatedLikes--
+        totalLikes--
 
-            } else if (btn.classList.contains('liked')) {
+        console.log(associatedProduction)
 
-                btn.classList.remove('liked')
-                associatedLikes--
-                totalLikes--
+    }
 
-            }
+    associatedLikesSelector.innerText = associatedLikes
+    totalLikesSelector.innerText = totalLikes
 
-            associatedLikesSelector.innerText = associatedLikes
-            totalLikesSelector.innerText = totalLikes
+    function getProductionId() {
 
-        })
+        let parent = btn.closest('.productions-section__article')
+        let parentID = Number(parent.getAttribute('data-id'))
+        console.log(photographerProductions)
 
-    });
+        return searchProductionById(parentID)
 
+        function searchProductionById(parentID) {
+            let production = photographerProductions.find(production => production.id === parentID)
+            return production
+        }
+
+    }
 }

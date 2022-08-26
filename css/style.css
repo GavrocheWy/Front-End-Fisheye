@@ -1,8 +1,38 @@
 @import url("photographer.css");
 @import url("productions.css");
+@import url("variables.css");
+
+/* Ajout à supprimer par la suite */
+
+*:focus {
+    position: relative;
+    outline: none;
+}
+
+*:focus::after {
+    content: "";
+    position: absolute;
+    background-color: rgba(0, 38, 255, 0.199);
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+}
+
+/* // Ajout à supprimer par la suite */
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.no-scroll {
+    overflow-y: hidden;
+}
 
 body {
     font-family: "DM Sans", sans-serif;
+    font-size: 18px;
     margin: 0;
 }
 
@@ -13,10 +43,11 @@ header {
     justify-content: space-between;
     align-items: center;
     height: 90px;
+    padding-top: 45px;
 }
 
 h1 {
-    color: #901C1C;
+    color: var(--main-color);
     margin-right: 100px;
 }
 
@@ -30,21 +61,71 @@ h1 {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 70px;
     margin-top: 100px;
+    margin-bottom: 100px;
 }
 
 .photographer_section article {
     justify-self: center;
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    align-items: center;
 }
 
 .photographer_section article h2 {
-    color: #D3573C;
+    color: var(--secondary-color);
     font-size: 36px;
+    margin: 10px 0px;
 }
 
-.photographer_section article img {
+/* Ajouts personnels */
+
+.article__link {
+    text-decoration: none;
+    color: inherit;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.article__img-frame {
     height: 200px;
     width: 200px;
+    border-radius: 150%;
+    overflow: hidden;
+    background-color: #eeeeee;
+}
+
+.article__img-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1);
+    transition: all 0.7s ease;
+}
+
+.article__img-frame:hover img {
+    transform: scale(1.025);
+    transition: all 0.7s ease;
+}
+
+.article__infos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}
+
+.article__infos--localisation {
+    color: var(--main-color);
+    font-size: 15px;
+}
+
+.article__infos--slogan {
+    font-size: 15px;
+}
+
+.article__infos--price {
+    color: var(--tertiary-color);
+    font-size: 14px;
 }

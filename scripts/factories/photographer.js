@@ -31,6 +31,7 @@ function photographerFactory(data) {
         let url = urlBase + urlSearchParams
 
         link.setAttribute('href', url)
+        link.setAttribute('aria-label', `Visiter la page de ${name}`)
 
         article.appendChild(link);
 
@@ -46,6 +47,14 @@ function photographerFactory(data) {
         paragraph.appendChild(priceSpan);
 
         // Ajout des classes CSS
+
+        imgFrame.classList.add('article__img-frame')
+        link.classList.add('article__link')
+        paragraph.classList.add('article__infos')
+        localisationSpan.classList.add('article__infos--localisation')
+        taglineSpan.classList.add('article__infos--slogan')
+        priceSpan.classList.add('article__infos--price')
+        h2.classList.add('article__title')
 
         // Return
 

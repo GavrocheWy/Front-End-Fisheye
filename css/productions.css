@@ -1,18 +1,19 @@
 .productions-section {
     display: flex;
-    gap: 2.5%;
-    justify-content: space-between;
+    column-gap: 95px;
+    row-gap: 75px;
     flex-wrap: wrap;
-    margin: 0 100px;
+    margin: 0 100px 100px 100px;
 }
 
 .productions-section__article {
-    width: 5%;
+    width: calc(33.33% - 64px);
 }
 
 .productions-section__article--img-frame {
     width: 100%;
     aspect-ratio: 1/1;
+    border-radius: 5px;
     overflow: hidden;
 }
 
@@ -22,24 +23,166 @@
     object-fit: cover;
 }
 
-.photograph-card {
-    position: fixed;
-    bottom: 0px;
-    right: 50px;
-    background-color: #901C1C;
-    padding: 0px 20px;
-    color: white;
+.productions-section__article--details {
     display: flex;
-    gap: 20px;
+    justify-content: space-between;
+    margin-top: 7px;
+}
+
+.productions-section__article-likebox {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.productions-section__article--title {
+    font-size: 24px;
+    color: var(--main-color);
+}
+
+.productions-section__article--btn {
+    display: flex;
+    background-color: transparent;
+    border: 0px solid transparent;
+    font-size: 20px;
+    color: var(--main-color);
+    cursor: pointer;
+    transform: scale(1);
+    transition: transform 0.2s ease;
+}
+
+.productions-section__article--btn:hover, .productions-section__article--btn:focus {
+    transform: scale(1.25);
+    transition: transform 0.2s ease;
+}
+
+.productions-section__article--btn :nth-child(2) {
+    display: none;
+}
+
+.productions-section__article--btn :first-child {
+    display: block;
+}
+
+.productions-section__article--btn.liked :nth-child(2) {
+    display: block;
+}
+
+.productions-section__article--btn.liked :first-child {
+    display: none;
+}
+
+.productions-section__article-lightbox-btn {
+    border: none;
+    cursor: pointer;
+    background-color: #eeeeee;
+}
+
+.productions-section__article-lightbox-btn img {
+    transform: scale(1);
+    transition: all 0.7s ease;
+}
+
+.productions-section__article-lightbox-btn:hover img {
+    transform: scale(1.025);
+    transition: all 0.7s ease;
+}
+
+.productions-section__article-lightbox-btn video {
+    transform: scale(1);
+    transition: all 0.7s ease;
+}
+
+.productions-section__article-lightbox-btn:hover video {
+    transform: scale(1.025);
+    transition: all 0.7s ease;
+}
+
+.productions-section__article-likebox--text {
+    font-size: 16px;
+}
+
+.productions-section__article-likebox--text.liked {
+    font-size: 24px;
+    color: var(--main-color);
 }
 
 .sort-form {
     display: flex;
     flex-direction: row;
+    align-items: center;
     gap: 15px;
-    margin: 30px 0px;
+    margin: 30px 100px 60px 100px;
+    width: auto;
 }
 
 .sort-form label {
-    font-size: 16px;
+    font-size: 18px;
+}
+
+.sort-form select {
+    background-color: var(--main-color);
+    border: none;
+    color: white;
+    font-size: 18px;
+    padding: 10px 10px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    border-radius: 5px;
+}
+
+.sort-form option {
+    background-color: var(--main-color);
+    border: none;
+    color: white;
+    font-size: 18px;
+}
+
+/* Modal lightbox */
+
+.modal-lightbox__main {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.modal-lightbox__current-production {
+    width: 100%;
+}
+
+.modal-lightbox__current-production--title {
+    font-size: 24px;
+    color: var(--main-color);
+    margin-top: 10px;
+}
+
+.modal-lightbox__current-production--img {
+    width: 100%;
+    height: 75vh;
+    overflow: hidden;
+}
+
+.modal-lightbox__current-production--img img, .modal-lightbox__current-production--img video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.modal-lightbox__nav {
+    background-color: transparent;
+    border: none;
+    color: var(--main-color);
+    font-weight: 800;
+    font-size: 50px;
+    cursor: pointer;
+}
+
+.modal-lightbox + .modal-bg {
+    background-color: rgb(255, 255, 255);
+    opacity: 0.9;
+}
+
+.modal-lightbox .modal-close-btn {
+    color: var(--main-color);
 }

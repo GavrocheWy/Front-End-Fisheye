@@ -1,16 +1,13 @@
-function refreshProductionsGrid(arr) {
+function refreshProductionsGrid() {
 
-    // Création du bouton de tri
-
-    // Création du formulaire de tri
-
-    sortForm()
+    let arr = photographerProductions
 
     // Écoute du formulaire de tri
 
     const sortSelectSelector = document.querySelector('.sort-select')
 
     sortSelectSelector.addEventListener('change', function (e) {
+        
         e.preventDefault
         
         const selectedValue = e.target.value
@@ -30,7 +27,7 @@ function refreshProductionsGrid(arr) {
 
     })
 
-    // Trier par date de création (du plus vieux au plus récent)
+    // Trier par date de création (date de la plus ancienne à la plus récente)
 
     function sortByDate() {
 
@@ -57,6 +54,8 @@ function refreshProductionsGrid(arr) {
 
     }
 
+    // Trier par popularité (nombre de likes par ordre décroissant)
+
     function sortByPopularity() {
 
         const newArr = arr.sort((a, b) => {
@@ -79,6 +78,8 @@ function refreshProductionsGrid(arr) {
         });
 
     }
+
+    // Trier par titre (ordre alphabétique)
 
     function sortByTitle() {
 
