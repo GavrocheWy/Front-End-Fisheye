@@ -23,6 +23,7 @@ function photographerHeader(data) {
 
         img.setAttribute("src", picture)
         contactBtn.setAttribute('onclick', 'displayModal()')
+        contactBtn.setAttribute('aria-label', `Contacter ${name}`)
 
         h1.textContent = name;
         contactBtn.textContent = 'Contactez-moi';

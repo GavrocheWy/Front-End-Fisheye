@@ -163,7 +163,18 @@
     overflow: hidden;
 }
 
-.modal-lightbox__current-production--img img, .modal-lightbox__current-production--img video{
+.modal-lightbox__current-production--img img, .modal-lightbox__current-production--img button {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.modal-lightbox__current-production--img button {
+    border: none;
+    background-color: transparent;
+}
+
+.modal-lightbox__current-production--img button video {
     width: 100%;
     height: 100%;
     object-fit: cover;

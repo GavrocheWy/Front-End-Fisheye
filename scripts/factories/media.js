@@ -43,8 +43,14 @@ function mediaFactory(data) {
 
         article.setAttribute('data-id', id)
         likesBtn.setAttribute('aria-label', `Ajouter un j'aime au média ${title}`)
-        titleText.setAttribute('lang', 'en')
+        titleText.setAttribute('lang', 'en-GB')
         likesText.setAttribute('aria-label', `Nombre de j'aime pour ce post : ${likes}`)
+        lightBoxBtn.setAttribute('aria-label', 
+        `Ouvrir 
+        ${image ? `l'image` : `la vidéo`}
+        ${title}
+        `)
+        lightBoxBtn.setAttribute('lang', `en-GB`)
 
         article.classList.add('productions-section__article')
         imgFrame.classList.add('productions-section__article--img-frame')
@@ -67,6 +73,7 @@ function mediaFactory(data) {
 
             const img = document.createElement('img');
             img.setAttribute("src", picture)
+            img.setAttribute("alt", title)
             imgFrame.appendChild(img)
 
         } else if (video) {
