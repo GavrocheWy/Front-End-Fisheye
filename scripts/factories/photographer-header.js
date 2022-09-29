@@ -22,6 +22,7 @@ function photographerHeader(data) {
         // Attributs & Contenu textuel
 
         img.setAttribute("src", picture)
+        img.setAttribute("alt", `profil de ${name}`)
         contactBtn.setAttribute('onclick', 'displayModal()')
         contactBtn.setAttribute('aria-label', `Contacter ${name}`)
 

@@ -19,6 +19,8 @@ function photographerFactory(data) {
         const priceSpan = document.createElement('span')
 
         img.setAttribute("src", picture)
+        img.setAttribute("alt", `profil de ${name}`)
+        img.setAttribute("title", `Voir la page de ${name}`)
         h2.textContent = name;
         localisationSpan.textContent = `${city}, ${country}`
         taglineSpan.textContent = tagline

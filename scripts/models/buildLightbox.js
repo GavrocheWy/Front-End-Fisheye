@@ -44,9 +44,11 @@ function buildLightbox(id) {
 
     if (firstDisplayedProduction.image) {
         img.setAttribute('src', `assets/images/${firstDisplayedProduction.photographerId}/${firstDisplayedProduction.image}`)
+        img.setAttribute('alt', `${firstDisplayedProduction.title}`)
         currentProductionDisplayedImg.appendChild(img)
     } else if (firstDisplayedProduction.video) {
         video.setAttribute('src', `assets/images/${firstDisplayedProduction.photographerId}/${firstDisplayedProduction.video}`)
+        video.setAttribute('alt', `${firstDisplayedProduction.title}`)
         currentProductionDisplayedImg.appendChild(videoPlayer)
         videoPlayer.appendChild(video)
     }
@@ -123,6 +125,7 @@ function buildLightbox(id) {
             focusablesInLightbox = Array.from(lighboxModal.querySelectorAll(focusableElementInLightboxModal))
         } else if (photographerProductions[index].video != undefined) {
             video.setAttribute('src', `assets/images/${photographerProductions[index].photographerId}/${photographerProductions[index].video}`)
+            video.setAttribute('alt', `${photographerProductions[index].title}`)
             document.querySelector('.modal-lightbox__current-production--img').innerHTML = ""
             currentProductionDisplayedImg.appendChild(videoPlayer)
             videoPlayer.appendChild(video)

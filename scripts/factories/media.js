@@ -10,7 +10,7 @@ function mediaFactory(data) {
         const article = document.createElement('article');
         const imgFrame = document.createElement('div')
         const details = document.createElement('div')
-        const titleText = document.createElement('p')
+        const titleText = document.createElement('h2')
         const likesBox = document.createElement('div')
         const likesText = document.createElement('p')
         const likesBtn = document.createElement('button')
@@ -43,14 +43,11 @@ function mediaFactory(data) {
 
         article.setAttribute('data-id', id)
         likesBtn.setAttribute('aria-label', `Ajouter un j'aime au média ${title}`)
-        titleText.setAttribute('lang', 'en-GB')
-        likesText.setAttribute('aria-label', `Nombre de j'aime pour ce post : ${likes}`)
         lightBoxBtn.setAttribute('aria-label', 
         `Ouvrir 
         ${image ? `l'image` : `la vidéo`}
         ${title}
         `)
-        lightBoxBtn.setAttribute('lang', `en-GB`)
 
         article.classList.add('productions-section__article')
         imgFrame.classList.add('productions-section__article--img-frame')
@@ -74,6 +71,7 @@ function mediaFactory(data) {
             const img = document.createElement('img');
             img.setAttribute("src", picture)
             img.setAttribute("alt", title)
+            img.setAttribute("title", `Afficher la photo ${title}`)
             imgFrame.appendChild(img)
 
         } else if (video) {

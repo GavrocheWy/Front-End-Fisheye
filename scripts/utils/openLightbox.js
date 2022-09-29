@@ -3,6 +3,8 @@ const lighboxModal = document.querySelector("#lightbox_modal");
 const lightboxCloseBtn = document.querySelector('#lightbox_modal_close_btn')
 let previouslyFocusedElement = null
 
+const blabla = 1
+
 const focusableElementInLightboxModal = 'button, a, input, textarea';
 let focusablesInLightbox = []
 
