@@ -1,3 +1,6 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
+
 // Paramètres d'URL (Pour chercher l'id du photographe)
 
 let urlParams = (new URL(document.location)).searchParams;

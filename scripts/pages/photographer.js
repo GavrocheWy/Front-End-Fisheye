@@ -1,3 +1,6 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
+
 // PARTIE RECUPERATION DES INFORMATIONS - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 // Variables globales 
@@ -58,7 +61,7 @@ async function displayData(photographerInfo) {
     const userCardDOM = photographerModel.getUserCardDOM();
     photographerSinglePage.prepend(userCardDOM);
 
-};
+}
 
 // Affichage des productions du photographe
 
@@ -101,7 +104,7 @@ async function displayProductions(photographerProductions) {
 
     photographerSinglePage.append(priceCardDOM);
 
-};
+}
 
 // PARTIE INITIALISATION - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -122,7 +125,7 @@ async function init() {
 
     refreshProductionsGrid()
     
-};
+}
 
 init();
 

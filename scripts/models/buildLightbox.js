@@ -1,3 +1,6 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
+
 function buildLightbox(id) {
 
     const lightboxContent = document.querySelector('#lightbox_modal_content')

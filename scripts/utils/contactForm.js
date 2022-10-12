@@ -1,3 +1,6 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
+
 const contactForm = document.querySelector('#contact_modal_form')
 const contactFormFirstnameElt = document.querySelector('#contact-form-prenom')
 const contactFormLastnameElt = document.querySelector('#contact-form-nom')
@@ -63,7 +66,7 @@ contactFormEmailElt.addEventListener('change', function(e) {
 
     let val = e.target.value
 
-    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(val)) {
+    if (/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(val)) {
 
         userInformations.email = val
         contactFormEmailElt.removeAttribute('aria-invalid')

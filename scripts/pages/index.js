@@ -1,3 +1,6 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
+
 async function getPhotographers() {
 
     // Penser à remplacer par les données récupérées dans le json
@@ -27,12 +30,12 @@ async function displayData(photographers) {
         photographersSection.appendChild(userCardDOM);
     });
 
-};
+}
 
 async function init() {
     // Récupère les datas des photographes
     const photographersInfos = await getPhotographers();
     displayData(photographersInfos);
-};
+}
 
 init();
