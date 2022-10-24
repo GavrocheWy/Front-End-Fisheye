@@ -230,3 +230,8 @@ form textarea {
 .photograph-card__total-like :nth-child(2) {
     font-size: 20px;
 }
+
+.lightbox-alert {
+    height: 0px;
+    opacity: 0;
+}

@@ -1,3 +1,6 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
+
 function mediaFactory(data) {
 
     const { photographerId, id, title, image, video, likes, date, isLiked } = data;

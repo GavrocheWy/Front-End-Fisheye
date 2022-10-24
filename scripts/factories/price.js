@@ -1,3 +1,6 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
+
 function priceFactory(data) {
 
     const { price, totalLikes } = data;

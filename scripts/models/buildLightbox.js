@@ -78,6 +78,10 @@ function buildLightbox(id) {
 
     prevBtn.addEventListener('click', function () {
 
+        if (document.querySelector('.lightbox-alert')) {
+            document.querySelector('.lightbox-alert').remove()
+        }
+
         index--
 
         if (index === -1) {
@@ -86,11 +90,21 @@ function buildLightbox(id) {
 
         refreshProdutionDisplayed(index)
 
+        let alert = document.createElement('div')
+        alert.setAttribute('role', 'alert')
+        alert.classList.add('lightbox-alert')
+        alert.textContent = `Vous êtes sur l'image ${photographerProductions[index].title}`
+        lightboxContent.prepend(alert)
+
     })
 
     // Next Button
 
     nextBtn.addEventListener('click', function () {
+
+        if (document.querySelector('.lightbox-alert')) {
+            document.querySelector('.lightbox-alert').remove()
+        }
 
         index++
 
@@ -99,6 +113,12 @@ function buildLightbox(id) {
         }
 
         refreshProdutionDisplayed(index)
+
+        let alert = document.createElement('div')
+        alert.setAttribute('role', 'alert')
+        alert.classList.add('lightbox-alert')
+        alert.textContent = `Vous êtes sur l'image ${photographerProductions[index].title}`
+        lightboxContent.prepend(alert)
 
     })
 

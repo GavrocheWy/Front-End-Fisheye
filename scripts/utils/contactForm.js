@@ -130,6 +130,11 @@ function submitInfos() {
     console.log('Nom de l\'utilisateur :', userInformations.nom)
     console.log('Adresse email de l\'utilisateur :', userInformations.email)
     console.log('Message de l\'utilisateur :', userInformations.message)
+
+    let alert = document.createElement('div')
+    alert.setAttribute('role', 'alert')
+    alert.textContent = 'Votre message a bien été envoyé'
+    contactForm.prepend(alert)
 }
 
 // Envoi des erreurs
@@ -138,7 +143,6 @@ function submitError() {
     
     let alert = document.createElement('div')
     alert.setAttribute('role', 'alert')
-    alert.textContent = 'Certains éléments du formulaires sont invalides, veuillez les corriger s\'il vous plait'
     alert.textContent = 'Certains éléments du formulaires sont invalides, veuillez les corriger s\'il vous plait'
     contactForm.prepend(alert)
     

@@ -9,9 +9,10 @@
   <title>Fisheye - photographe </title>
 </head>
 
-<body>
+<body dir="ltr">
   <header>
-    <a href="index.html"><img src="assets/images/logo.png" class="logo" alt="logo de fisheye" title="Revenir à l'accueil"/></a>
+    <a href="index.html"><img src="assets/images/logo.png" class="logo" alt="logo de fisheye"
+        title="Revenir à l'accueil" /></a>
   </header>
   <main id="main">
     <div class="productions-section"></div>
@@ -29,22 +30,22 @@
       </header>
 
       <!-- Formulaire de la boite modale -->
-      <form id="contact_modal_form" action="" method="post">
+      <form id="contact_modal_form" method="post">
 
-        <fieldset role="group">
+        <fieldset>
 
           <legend style="visibility: hidden; height: 0px;">Informations personnelles</legend>
 
-          <div class="field-box" data-error-visible="false" pattern="[a-zA-Z]+"
+          <div class="field-box" data-error-visible="false"
             data-error="Veuillez entrer uniquement des lettres dans le champ du prénom">
             <label for="contact-form-prenom">Prénom</label>
-            <input type="text" placeholder="Votre prénom" value="" id="contact-form-prenom" autocomplete="off" required>
+            <input type="text"  pattern="[a-zA-Z]+" placeholder="Votre prénom" value="" id="contact-form-prenom" autocomplete="off" required>
           </div>
 
-          <div class="field-box" data-error-visible="false" pattern="[a-zA-Z]+"
+          <div class="field-box" data-error-visible="false"
             data-error="Veuillez entrer uniquement des lettres dans le champ du nom">
             <label for="contact-form-nom">Nom</label>
-            <input type="text" placeholder="Votre nom" value="" id="contact-form-nom" autocomplete="off" required>
+            <input type="text" pattern="[a-zA-Z]+" placeholder="Votre nom" value="" id="contact-form-nom" autocomplete="off" required>
           </div>
 
           <div class="field-box" data-error-visible="false" data-error="Veuillez entrer une adresse e-mail correcte">
@@ -57,7 +58,7 @@
 
         <div class="field-box" data-error-visible="false" data-error="Veuillez entrer un message">
           <label for="contact-form-message">Votre message</label>
-          <textarea id="contact-form-message" role="textbox" aria-multiline="true" required></textarea>
+          <textarea id="contact-form-message" aria-multiline="true" required></textarea>
         </div>
 
         <button type="submit" form="contact_modal_form" aria-label="Valider le formulaire de contact"
@@ -79,9 +80,9 @@
 
       <!-- Formulaire de la boite modale "Lightbox" -->
 
-      <main id="lightbox_modal_content">
+      <div id="lightbox_modal_content">
 
-      </main>
+      </div>
 
       <!-- Formulaire de la boite modale "Lightbox" -->
 
