@@ -45,7 +45,7 @@ function mediaFactory(data) {
         // Ajout des classes CSS & des Attributs
 
         article.setAttribute('data-id', id)
-        likesBtn.setAttribute('aria-label', `Ajouter un j'aime au média ${title}`)
+        likesBtn.setAttribute('aria-label', `Appuyez pour ajouter un j'aime au média ${title}`)
         lightBoxBtn.setAttribute('aria-label', 
         `Ouvrir 
         ${image ? `l'image` : `la vidéo`}
@@ -93,7 +93,7 @@ function mediaFactory(data) {
         // Ajout des likes si l'image est déjà likées
 
         isLiked ? likesBtn.classList.add('liked') : likesBtn.classList.remove('liked');
-
+        isLiked ? likesBtn.setAttribute('aria-label', `Appuyez à nouveau pour retirer votre j'aime au média ${title}`) : likesBtn.setAttribute('aria-label', `Appuyez pour ajouter un j'aime au média ${title}`);
         isLiked ? likesText.classList.add('liked') : likesText.classList.remove('liked');
 
         // Ajout des fontionnalités sur les éléments

@@ -25,6 +25,7 @@ function likeThePost(btn) {
     if (associatedProduction.isLiked === false) {
 
         btn.classList.add('liked')
+        btn.setAttribute('aria-label', `Appuyez à nouveau pour retirer votre j'aime au média ${associatedProduction.title}`)
         associatedLikesSelector.classList.add('liked')
         associatedProduction.isLiked = true
         associatedProduction.likes++
@@ -36,6 +37,7 @@ function likeThePost(btn) {
     } else if (associatedProduction.isLiked === true) {
 
         btn.classList.remove('liked')
+        btn.setAttribute('aria-label', `Appuyez pour ajouter un j'aime au média ${associatedProduction.title}`)
         associatedLikesSelector.classList.remove('liked')
         associatedProduction.isLiked = false
         associatedProduction.likes--

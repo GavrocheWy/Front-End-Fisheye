@@ -76,8 +76,7 @@ function buildLightbox(id) {
 
     // Prev Button
 
-    prevBtn.addEventListener('click', function () {
-
+    const previousPost = () => {
         if (document.querySelector('.lightbox-alert')) {
             document.querySelector('.lightbox-alert').remove()
         }
@@ -95,13 +94,13 @@ function buildLightbox(id) {
         alert.classList.add('lightbox-alert')
         alert.textContent = `Vous êtes sur l'image ${photographerProductions[index].title}`
         lightboxContent.prepend(alert)
+    }
 
-    })
+    prevBtn.addEventListener('click', previousPost)
 
     // Next Button
 
-    nextBtn.addEventListener('click', function () {
-
+    const nextPost = () => {
         if (document.querySelector('.lightbox-alert')) {
             document.querySelector('.lightbox-alert').remove()
         }
@@ -119,6 +118,23 @@ function buildLightbox(id) {
         alert.classList.add('lightbox-alert')
         alert.textContent = `Vous êtes sur l'image ${photographerProductions[index].title}`
         lightboxContent.prepend(alert)
+    }
+
+    nextBtn.addEventListener('click', nextPost)
+
+    // Navigation touches du clavier
+
+    document.addEventListener('keydown', function (e) {
+
+        if (lighboxModal.getAttribute('aria-hidden') == 'false' && (e.key === 'ArrowLeft')) {
+            previousPost()
+            prevBtn.focus()
+        }
+
+        if (lighboxModal.getAttribute('aria-hidden') == 'false' && e.key === 'ArrowRight') {
+            nextPost()
+            nextBtn.focus()
+        }
 
     })
 
